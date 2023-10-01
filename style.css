@@ -178,6 +178,67 @@ font-weight: 400;
   background-color:#f3f1ed;
 }
 
+.posts-container{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:32px 25px;
+}
+
+@media(min-width:768px){
+  .posts-container{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/* p167の検証 */
+
+/* .posts-container {
+  display:flex;
+  flex-wrap:wrap;
+  gap:32px 25px;
+
+
+}
+
+.posts-container > *{
+  width:200px;
+   flex-grow:1; これを使っても画像は3:2のまま　flexアイテムの横幅が広がってもその分画像の高さも広がる 
+} */
+
+
+
+
+/*  記事一覧の記事 */
+.post a{
+  display:block;/*多分実際はなくてもいい。親要素にgridが適用されているのでその子要素はgridアイテムになるのでインライン要素ではない。*/
+
+}
+.post h3{
+  margin:1em 0  0.5em ;/*このemは同要素のfont-sizeが基準*/
+  font-size:clamp(12px,2vw,20px);
+  min-height: 0vw;
+
+}
+.post p{
+  max-width:20em;
+  font-size:clamp(10px,1.6vw,14px);
+  min-height: 0vw;/*safariで適用するため*/
+}
+
+
+
+.post img {
+  aspect-ratio: 3 / 2 ;
+  object-fit: cover;
+  width:100%;
+  
+}
+
+@supports not (aspect-ratio: 3/2){
+  .post img{
+    height:180px;
+  }
+}
 
 /* パーツの見出し */
 .heading{
@@ -198,3 +259,40 @@ font-weight: 400;
 
 
 }
+
+/* p157 検証 */
+/* .posts-container > :nth-child(5) img{  //.posts-container > :nth-child(5) imgの書き方は　.posts-container の５番目の子要素(article)の子要素のimgタグに作用している
+  aspect-ratio: 3 / 2.4;
+}
+
+.posts-container>:nth-child(5){
+  grid-column: 1 /span 2;
+  grid-row:1 / span 2
+}  */
+
+
+
+/* footer */
+.footer{
+  padding:70px 0;
+  background-color:#ffffff;
+  color:#707070;
+  font-size:13px
+}
+
+.footer-container{
+  display:grid;
+  gap:50px;
+   justify-items:center;/* グリッドコンテナ内のグリッドアイテムの水平方向の配置  gridのみでflexでは使えない */
+}
+/* 
+justify-items：グリッドコンテナ内のグリッドアイテムの水平方向の配置
+justify-content：グリッドコンテナ内のグリッドアイテムの水平方向の配置　　対象となるのはフレックスコンテナ　ここ重要（コンテナに作用）
+align-items　　フレックスアイテムの垂直方向の配置
+align-content　フレックスまたはグリッドコンテナの複数行間隔を調整 　　の対象はフレックスコンテナまたはグリッドコンテナ
+
+justifyは水平方向　alignは垂直方向
+
+
+
+*/
