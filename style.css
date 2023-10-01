@@ -12,8 +12,10 @@ body{
     font-family:sans-serif;
 }
 
-h1,h2,h3,h4,h5,h6,p,figure{
+h1,h2,h3,h4,h5,h6,p,figure,ul{
     margin:0;
+    padding:0;
+    list-style:none;
 }
 
 img{
@@ -296,3 +298,28 @@ justifyは水平方向　alignは垂直方向
 
 
 */
+
+
+/* フッター：SNSメニュー */
+.footer-sns{
+  display:flex;
+  gap:24px;
+  font-size:24px;
+}
+
+.footer-sns a {
+  /* E F はEのすべての子要素のF */
+  display:grid;
+  place-items:center;
+  width:36px;
+  aspect-ratio: 1 / 1;
+  background-color: #cccccc;
+  color:#ffffff;
+  clip-path:circle(50%)
+}
+
+@supports not(aspect-ratio: 1 / 1){
+  .footer-sns a {
+    height: 36px;
+  }
+}
