@@ -2,193 +2,212 @@
 
 
 /* 基本 */
-:root{
-  --v-space:clamp(90px,9vw,120px)
-}
-body{
-    margin:0;
-    background-color: #eeeeee;
-    color:#222222;
-    font-family:sans-serif;
+:root {
+  --v-space: clamp(90px, 9vw, 120px)
 }
 
-h1,h2,h3,h4,h5,h6,p,figure,ul{
-    margin:0;
-    padding:0;
-    list-style:none;
+body {
+  margin: 0;
+  background-color: #eeeeee;
+  color: #222222;
+  font-family: sans-serif;
 }
 
-img{
-    display: block;
-    max-width: 100%;
-    height:auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 
 }
-p{
-    line-height: 1.8;
+
+p {
+  line-height: 1.8;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
+a {
+  color: inherit;
+  text-decoration: none;
 }
-a:hover{
-  filter:brightness(90%) contrast(120%)
+
+a:hover {
+  filter: brightness(90%) contrast(120%)
 }
 
 
 
 /* 横幅と左右の余白 */
-.w-container{
-    width:min(92%,1166px);
-    margin:auto;
-    position:relative;
+.w-container {
+  width: min(92%, 1166px);
+  margin: auto;
+  position: relative;
 }
 
 /* header */
 
-.header{
-    height:112px;
-    background-color: #ffffff;
-    position:sticky;
-    top:0;
-    z-index: 10;
+.header {
+  height: 112px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-.header-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height:100%;
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 /* nabigation_button */
-.navbtn{
-    padding:0;
-    outline:none;
-    border:none;
-    background:transparent;
-    cursor:pointer;
-    color:#aaaaaa;
-    font-size:30px; /*フォントサイズは高さのみの指定*/
+.navbtn {
+  padding: 0;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #aaaaaa;
+  font-size: 30px;
+  /*フォントサイズは高さのみの指定*/
 
 }
 
 /* hero */
-.hero{
-    height:650px;
-    background-image: url(img/hero.jpg);
-    background-position: center;
-    background-size:cover;
+.hero {
+  height: 650px;
+  background-image: url(img/hero.jpg);
+  background-position: center;
+  background-size: cover;
 
 }
-.hero-container{
-    display:grid;
-    justify-items: center;
-    align-content: center;
-    height:100%;
+
+.hero-container {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  height: 100%;
 }
 
-.hero h1{
-    margin-bottom:42px;
-    font-family:"Montserrat",sans-serif;
-    font-size:clamp(48px,5vw,68px);
-    min-height: 0vw;
-    font-weight: 400;
-    line-height:1.3;
-    text-align:center;
+.hero h1 {
+  margin-bottom: 42px;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(48px, 5vw, 68px);
+  min-height: 0vw;
+  font-weight: 400;
+  line-height: 1.3;
+  text-align: center;
 }
 
 .hero p {
-    margin-bottom:72px;
+  margin-bottom: 72px;
 }
 
 /* btn */
 
-.btn{
-  display:block;
-  width:260px;
-  padding:10px;
-  box-sizing:border-box;
-  border-radius:4px;
-  background-color:#e8b368;
-  color:#ffffff;
+.btn {
+  display: block;
+  width: 260px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #e8b368;
+  color: #ffffff;
   font-size: 18px;
   text-align: center;
   text-shadow: 0 0 6px #cec6c652;
 }
 
 /* img and text */
-.imgtext{
-  padding:var(--v-space) 0;
-  background-color: #d4d1ca;/*#ffffff*/
+.imgtext {
+  padding: var(--v-space) 0;
+  background-color: #d4d1ca;
+  /*#ffffff*/
 }
 
-.imgtext + .imgtext{
-  padding-top:0;
+.imgtext+.imgtext {
+  padding-top: 0;
 }
 
-.imgtext-container{
-  display:flex;
+.imgtext-container {
+  display: flex;
   flex-direction: column;
-  gap:clamp(45px,6vw,80px);
+  gap: clamp(45px, 6vw, 80px);
 }
-@media(min-width:768px){
- .imgtext-container{
-  flex-direction: row;
-  align-items:center;
- }
- .imgtext-container.reverse{
-  flex-direction: row-reverse;
- }
- .imgtext-container > .text{
-  flex:1;
-  min-width: 17em;
- }
- .imgtext-container >.img{
-  flex:2;
- }
+
+@media(min-width:768px) {
+  .imgtext-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .imgtext-container.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .imgtext-container>.text {
+    flex: 1;
+    min-width: 17em;
+  }
+
+  .imgtext-container>.img {
+    flex: 2;
+  }
 }
 
 /* title and subtitile (赤い色の線で装飾）*/
-.heading-decoration{
-font-size:clamp(30px,3vw,40px);
-min-height:0vw;
-font-weight: 400;
+.heading-decoration {
+  font-size: clamp(30px, 3vw, 40px);
+  min-height: 0vw;
+  font-weight: 400;
 }
 
-.heading-decoration::after{
-  display:block;
-  content:"";
-  width:160px;
-  height:0px;
-  border-top:solid 1px #b72661;
-  margin-top:0.6rem;
+.heading-decoration::after {
+  display: block;
+  content: "";
+  width: 160px;
+  height: 0px;
+  border-top: solid 1px #b72661;
+  margin-top: 0.6rem;
 }
 
-.heading-decoration+p{
-  margin-top:1rem;
-  margin-bottom:2rem;/*ブラウザの標準のフォントサイズ16pzが1em*/
-  color:#707070;
-  font-family: "Montserrat",sans-serif;
-  font-size:18px;
+.heading-decoration+p {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  /*ブラウザの標準のフォントサイズ16pzが1em*/
+  color: #707070;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
 }
 
 /* 記事一覧 */
-.posts{
-  padding:var(--v-space) 0;
-  background-color:#f3f1ed;
+.posts {
+  padding: var(--v-space) 0;
+  background-color: #f3f1ed;
 }
 
-.posts-container{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
-  gap:32px 25px;
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 25px;
 }
 
-@media(min-width:768px){
-  .posts-container{
-    grid-template-columns: repeat(3,1fr);
+@media(min-width:768px) {
+  .posts-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -211,53 +230,59 @@ font-weight: 400;
 
 
 /*  記事一覧の記事 */
-.post a{
-  display:block;/*多分実際はなくてもいい。親要素にgridが適用されているのでその子要素はgridアイテムになるのでインライン要素ではない。*/
+.post a {
+  display: block;
+  /*多分実際はなくてもいい。親要素にgridが適用されているのでその子要素はgridアイテムになるのでインライン要素ではない。*/
 
 }
-.post h3{
-  margin:1em 0  0.5em ;/*このemは同要素のfont-sizeが基準*/
-  font-size:clamp(12px,2vw,20px);
+
+.post h3 {
+  margin: 1em 0 0.5em;
+  /*このemは同要素のfont-sizeが基準*/
+  font-size: clamp(12px, 2vw, 20px);
   min-height: 0vw;
 
 }
-.post p{
-  max-width:20em;
-  font-size:clamp(10px,1.6vw,14px);
-  min-height: 0vw;/*safariで適用するため*/
+
+.post p {
+  max-width: 20em;
+  font-size: clamp(10px, 1.6vw, 14px);
+  min-height: 0vw;
+  /*safariで適用するため*/
 }
 
 
 
 .post img {
-  aspect-ratio: 3 / 2 ;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
-  width:100%;
-  
+  width: 100%;
+
 }
 
-@supports not (aspect-ratio: 3/2){
-  .post img{
-    height:180px;
+@supports not (aspect-ratio: 3/2) {
+  .post img {
+    height: 180px;
   }
 }
 
 /* パーツの見出し */
-.heading{
-  position:absolute;
-  top:calc((var(--v-space) + 0.6em)*-1); /*+の前後は半角スペース開ける  font-size以外で使ったemの基準はfont-size*/
-  font-family:"Montserrat" ,sans-serif;
-  font-size:clamp(40px,5.2vw,70px);
-  min-height:0vw;
+.heading {
+  position: absolute;
+  top: calc((var(--v-space) + 0.6em)*-1);
+  /*+の前後は半角スペース開ける  font-size以外で使ったemの基準はfont-size*/
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 5.2vw, 70px);
+  min-height: 0vw;
   font-weight: 300;
 
 
 }
 
 .heading span {
-  display:block;
-  color:#666666;
-  font-size:18px;
+  display: block;
+  color: #666666;
+  font-size: 18px;
 
 
 }
@@ -275,18 +300,20 @@ font-weight: 400;
 
 
 /* footer */
-.footer{
-  padding:70px 0;
-  background-color:#ffffff;
-  color:#707070;
-  font-size:13px
+.footer {
+  padding: 70px 0;
+  background-color: #ffffff;
+  color: #707070;
+  font-size: 13px
 }
 
-.footer-container{
-  display:grid;
-  gap:50px;
-   justify-items:center;/* グリッドコンテナ内のグリッドアイテムの水平方向の配置  gridのみでflexでは使えない */
+.footer-container {
+  display: grid;
+  gap: 50px;
+  justify-items: center;
+  /* グリッドコンテナ内のグリッドアイテムの水平方向の配置  gridのみでflexでは使えない */
 }
+
 /* 
 justify-items：グリッドコンテナ内のグリッドアイテムの水平方向の配置
 justify-content：グリッドコンテナ内のグリッドアイテムの水平方向の配置　　対象となるのはフレックスコンテナ　ここ重要（コンテナに作用）
@@ -294,32 +321,79 @@ align-items　　フレックスアイテムの垂直方向の配置
 align-content　フレックスまたはグリッドコンテナの複数行間隔を調整 　　の対象はフレックスコンテナまたはグリッドコンテナ
 
 justifyは水平方向　alignは垂直方向
-
-
-
 */
 
 
+@media(min-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+  }
+
+  .footer-container > .footer-site{
+    margin-bottom:20px
+
+  }
+
+  .footer-container > *:not(.footer-sns){
+    /* 「 *」 と「:」のスペースは開けてはいけない！ */
+    justify-self: start;
+  }
+
+  .footer-container > .footer-sns {
+    /* E > F E直下の子要素F */
+
+    grid-column: 2 ;
+    grid-row:1 / 4;
+    justify-self:end;
+    align-self:center; /*flexに対して適応される。検証ツールで.footer-snsのflexをいじって確認する*/
+  }
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 /* フッター：SNSメニュー */
-.footer-sns{
-  display:flex;
-  gap:24px;
-  font-size:24px;
+.footer-sns {
+  display: flex;
+  gap: 24px;
+  font-size: 24px;
 }
 
 .footer-sns a {
   /* E F はEのすべての子要素のF */
-  display:grid;
-  place-items:center;
-  width:36px;
+  display: grid;
+  place-items: center;
+  width: 36px;
   aspect-ratio: 1 / 1;
   background-color: #cccccc;
-  color:#ffffff;
-  clip-path:circle(50%)
+  color: #ffffff;
+  clip-path: circle(50%)
 }
 
-@supports not(aspect-ratio: 1 / 1){
+@supports not(aspect-ratio: 1 / 1) {
   .footer-sns a {
     height: 36px;
   }
+}
+
+/* フッター：テキストメニュー */
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
