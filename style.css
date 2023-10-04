@@ -397,3 +397,15 @@ justifyは水平方向　alignは垂直方向
   justify-content: center;
   gap: 20px;
 }
+
+/* 　記事 */
+.entry{
+  padding-bottom:var(--v-space);
+  background-color:#ffffff
+}
+
+.entry-img img {
+  width:100%;  /*max-width:100%とwidth:100%の違いは画面サイズを広げた時、元サイズより拡大するか（width:100%; ）させないか（max-width: 100%;）*/
+  max-height: 400px;
+  object-fit: cover;
+}
