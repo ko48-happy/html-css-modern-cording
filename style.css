@@ -332,23 +332,23 @@ justifyは水平方向　alignは垂直方向
     gap: 20px;
   }
 
-  .footer-container > .footer-site{
-    margin-bottom:20px
-
+  .footer-container>.footer-site {
+    margin-bottom: 20px
   }
 
-  .footer-container > *:not(.footer-sns){
+  .footer-container>*:not(.footer-sns) {
     /* 「 *」 と「:」のスペースは開けてはいけない！ */
     justify-self: start;
   }
 
-  .footer-container > .footer-sns {
+  .footer-container>.footer-sns {
     /* E > F E直下の子要素F */
 
-    grid-column: 2 ;
-    grid-row:1 / 4;
-    justify-self:end;
-    align-self:center; /*flexに対して適応される。検証ツールで.footer-snsのflexをいじって確認する*/
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: end;
+    align-self: center;
+    /*flexに対して適応される。検証ツールで.footer-snsのflexをいじって確認する*/
   }
 
 
@@ -396,4 +396,50 @@ justifyは水平方向　alignは垂直方向
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+}
+
+/* 　記事 */
+.entry {
+  padding-bottom: var(--v-space);
+  background-color: #ffffff
+}
+
+.entry-img img {
+  width: 100%;
+  /*max-width:100%とwidth:100%の違いは画面サイズを広げた時、元サイズより拡大するか（width:100%; ）させないか（max-width: 100%;）*/
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: calc(var(--v-space)* 2 /3);
+}
+
+.entry .w-container {
+  max-width: 720px;
+}
+
+.entry .heading-decoration {
+  font-size: clamp(30px, 6.25vw, 48px);
+
+}
+
+.entry-container {
+  font-size: clamp(16px, 2.4vw, 18px)
+}
+
+.entry-container :where(h1, h2, h3, h4, h5, h6, p, figure, ul) {
+  margin-top:revert;
+  margin-bottom: revert;
+  padding:revert;
+  list-style: revert;
+}
+
+.entry-container p {
+  margin:1.8rem 0 ;
+
+}
+
+.entry-container > :first-child{
+  margin-top:0;
+}
+.entry-container > :last-child{
+  margin-bottom:0;
 }
